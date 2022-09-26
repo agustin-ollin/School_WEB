@@ -2161,7 +2161,7 @@ fieldset[disabled] .btn-danger.active {
 
 .btn-neutral {
   background-color: #FFFFFF;
-  color: #f96332;
+  color: rgb(48,121,53);
 }
 
 .btn-neutral:hover,
@@ -2290,7 +2290,7 @@ fieldset[disabled] .btn-neutral.active {
 
 .btn-neutral:hover,
 .btn-neutral:focus {
-  color: #fa7a50 !important;
+  color: rgb(101, 194, 107) !important;
 }
 
 .btn-neutral:hover:not(.nav-link),
@@ -4684,7 +4684,7 @@ Created using IcoMoon - icomoon.io
 }
 
 .bg-primary {
-  background-color: #47c02c !important;
+  background-color: #41882e !important;
 }
 
 .bg-info {
@@ -5839,7 +5839,7 @@ img {
 }
 
 .login-page .card-login .input-group:last-child {
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 .login-page .card-login.card-plain .form-control::-moz-placeholder {
