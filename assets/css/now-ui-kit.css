@@ -5998,8 +5998,8 @@ img {
 }
 
 .page-header.page-header-small {
-  min-height: 60vh;
-  max-height: 440px;
+  min-height: 15vh;
+  max-height: 240px;
 }
 
 .page-header:before {
