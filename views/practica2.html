@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="principal">
+        <form action="practica2.html" name="formValida">
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre">
+            <br>
+            <br>
+            <label for="edad">Edad</label>
+            <input type="text" name="edad">
+            <br>
+            <br>
+            <label for="intereses">Intereses</label>
+            <select name="intereses">
+                <option value="Elegir">Elegir</option>
+                <option value="Comercial">Contacto al comercio</option>
+                <option value="Clientes">Atención al cliente</option>
+                <option value="Proveedores">Contacto de Proveedores</option>
+            </select>
+            <br>
+            <br>
+            <input type="button" value="Enviar" onclick="valida_enviar()">
+        </form>
+    </div>
+</body>
+</html>
+<script>
+    function valida_enviar() {
+        if (document.formValida.nombre.value.length == 0) {
+            alert("No se ha registrado el nombre!!")
+            document.formValida.nombre.focus();
+            return 0;
+        }
+
+        edad = document.formValida.edad.value;
+        if (edad == "") {
+            alert("No se ha registrado la edad!!")
+            document.formValida.edad.focus();
+            return 0;
+        } else {
+            if (edad < 18) {
+                alert("Debe ser mayor de 18 años!!")
+                document.formValida.edad.focus();
+                return 0;
+            }
+        }
+
+        if (document.formValida.intereses.selectedIndex == 0) {
+            alert("Debe seleccionar un motivo de contacto!!")
+            document.formValida.intereses.focus();
+            return 0;
+        }
+
+        alert("Gracias por enviar el formulario!!")
+
+        /*
+        Agregar a la página anterior 5 validaciones javascript
+         */
+    }
+</script>
