@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+</head>
+<body>
+    <section>
+        <form action="">
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre" id="nombre">
+            <br>
+            <label for="apellido">Apellido</label>
+            <input typposte="text" name="apellido" id="apellido">
+            <br>
+            <!--<input type="button" value="Enviar" id="Enviar">-->
+            <button type="button" value="Enviar" id="Enviar">Enviar</button>
+        </form>
+    </section>
+    <div id="respuesta"></div>
+</body>
+<script>
+    $('#Enviar').click(function (){
+        var nombre = document.getElementById('nombre').value;
+        var apellido = document.getElementById('apellido').value;
+        //var edad = document.getElementById('edad').value ? document.getElementById('edad').value : 34 ;
+
+        var ruta = "Nom=" + nombre + "&Ape=" + apellido;
+
+        $.ajax({
+            url: 'validate.php',
+            type: 'POST',
+            data: ruta
+        })
+        .done(function (res){
+            $('#respuesta').html(res)
+        })
+        .fail(function (){ console.log("Error") })
+        .always(function (){ console.log("Error") })
+    });
+</script>
+</html>
