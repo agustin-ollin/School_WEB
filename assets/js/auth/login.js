@@ -23,11 +23,25 @@ function validarFormulario(){
     if (comprobarDatosRegistrados(user, "Email") && comprobarDatosRegistrados(password, "Contraseña")) {
         if (comprobarEmail(user)){
             if (comprobarPassword(password)) {
-                alert("Iniciando Sesión")
+                var ruta = "email=" + user + "&password=" + password;
+                $.ajax({
+                    url: '../views/validate_functions.php',
+                    type: 'POST',
+                    data: ruta
+                })
+                    .done(function (res){
+                        console.log("Listo")
+                        location.href = '../views/tramites.html';
+                    })
+                    .fail(function (){ alert("Datos de usuario incorrectos!!") })
+
+
             }
         }
     }
 }
+
+
 
 /**
  * Función que ocupa expresión regular para comprobar que el texto ingresado sea un correo electrónico
